@@ -3,7 +3,6 @@ import { defineStore } from "pinia";
 export const useStore = defineStore("main", {
   state: () => {
     return {
-      date: moment().format("dddd Do MMMM YYYY hh:mm"),
       dice1: "-",
       dice2: "-",
       results: [],
@@ -18,7 +17,7 @@ export const useStore = defineStore("main", {
       this.results.push(
         `Entry ${i} : ${this.dice1} + ${this.dice2} = ${
           this.dice1 + this.dice2
-        } (${this.date})`
+        } (${moment().format("dddd Do MMMM YYYY hh:mm")})`
       );
       console.log(this.results);
     },
@@ -39,7 +38,7 @@ export const useStore = defineStore("main", {
         document.createTextNode(
           `Entry ${i}: ${this.dice1} + ${this.dice2} = ${
             this.dice1 + this.dice2
-          } (${this.date})`
+          } (${moment().format("dddd Do MMMM YYYY hh:mm")})`
         )
       );
       ul.appendChild(li);
