@@ -1,8 +1,8 @@
 <script setup>
 import Title from "./components/Title.vue";
-import Dice from "./components/Dice.vue";
 import Log from "./components/Log.vue";
-import { useStore } from "@/stores/DiceGame";
+import Dice from "./components/Dice.vue";
+import { useDiceStore } from "./stores/diceStore";
 </script>
 
 <template>
@@ -12,29 +12,5 @@ import { useStore } from "@/stores/DiceGame";
 </template>
 
 <style>
-* {
-  font-family: "Montserrat";
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: #f7f7f7;
-  padding: 2rem 4rem;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  gap: 3rem;
-}
-
-li {
-  list-style: none;
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+@import "../src/main.css";
 </style>

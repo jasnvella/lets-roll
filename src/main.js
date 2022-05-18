@@ -1,21 +1,8 @@
 import { createApp } from "vue";
-import App from "./App.vue";
 import { createPinia } from "pinia";
-import { useStore } from "@/stores/DiceGame";
+import App from "./App.vue";
 
 const app = createApp(App);
-const pinia = createPinia();
-app.use(pinia);
-
-export default {
-  setup() {
-    const moment = require("moment");
-    const store = useStore();
-
-    return {
-      store,
-    };
-  },
-};
+app.use(createPinia());
 
 app.mount("#app");

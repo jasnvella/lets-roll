@@ -1,0 +1,111 @@
+* {
+  font-family: "Montserrat";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f7f7f7;
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 3rem;
+}
+
+li {
+  list-style: none;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  background-color: #0275d8;
+  color: #fff;
+  height: 120px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.score {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.dice {
+  background-color: #0275d8;
+  color: #fff;
+  width: 300px;
+  height: 300px;
+  font-size: 90px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.rollBtn,
+.rollBtn:visited {
+  background-color: #5cb85c;
+  width: fit-content;
+  font-size: 20px;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  transition: all 0.3s;
+}
+
+.rollBtn:hover,
+.rollBtn:active {
+  background-color: #50a350;
+}
+
+.logArea {
+  background-color: #fff;
+  text-decoration: underline;
+  min-height: 200px;
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  overflow: scroll;
+}
+
+.resetBtn,
+.resetBtn:visited {
+  background-color: #d9534f;
+  width: fit-content;
+  font-size: 14px;
+  color: #fff;
+  padding: 0.5rem 2.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  transition: all 0.3s;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.resetBtn:hover,
+.resetBtn:active {
+  background-color: #c94f4a;
+}
