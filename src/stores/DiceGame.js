@@ -3,8 +3,8 @@ import { defineStore } from "pinia";
 export const useStore = defineStore("main", {
   state: () => {
     return {
-      dice1: "-",
-      dice2: "-",
+      dice1: null,
+      dice2: null,
       results: [],
     };
   },
@@ -17,9 +17,8 @@ export const useStore = defineStore("main", {
       this.results.push(
         `Entry ${i} : ${this.dice1} + ${this.dice2} = ${
           this.dice1 + this.dice2
-        } (${moment().format("dddd Do MMMM YYYY hh:mm")})`
+        } (${this.date})`
       );
-      console.log(this.results);
     },
 
     reset() {
@@ -29,19 +28,6 @@ export const useStore = defineStore("main", {
       this.dice1 = "-";
       this.dice2 = "-";
       this.results = [];
-    },
-    addLog() {
-      let i = this.results.length;
-      var ul = document.getElementById("list");
-      var li = document.createElement("li");
-      li.appendChild(
-        document.createTextNode(
-          `Entry ${i}: ${this.dice1} + ${this.dice2} = ${
-            this.dice1 + this.dice2
-          } (${moment().format("dddd Do MMMM YYYY hh:mm")})`
-        )
-      );
-      ul.appendChild(li);
     },
   },
 });

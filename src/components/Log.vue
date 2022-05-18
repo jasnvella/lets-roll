@@ -1,13 +1,18 @@
 <script setup>
 import { useStore } from "@/stores/DiceGame";
 const store = useStore();
+
+methods: {
+}
 </script>
 
 <template>
   <div class="logArea" id="logArea">
     <h3>Roll Log</h3>
     <br />
-    <ul id="list"></ul>
+    <ul id="list">
+      <li :class="results"></li>
+    </ul>
 
     <button class="resetBtn" @click="store.reset()">Reset</button>
   </div>

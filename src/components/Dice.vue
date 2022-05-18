@@ -1,16 +1,14 @@
-<script setup>
+<script>
 import { useStore } from "@/stores/DiceGame";
 const store = useStore();
 </script>
 
 <template>
   <div class="score">
-    <div id="dice1">{{ store.dice1 }}</div>
-    <div id="dice2">{{ store.dice2 }}</div>
+    <div id="dice1">{{}}</div>
+    <div id="dice2">{{}}</div>
   </div>
-  <button class="rollBtn" @click="store.rollDice(), store.addLog()">
-    Roll
-  </button>
+  <button class="rollBtn">Roll</button>
 </template>
 
 <style>

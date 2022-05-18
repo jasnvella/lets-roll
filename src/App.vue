@@ -3,10 +3,6 @@ import Title from "./components/Title.vue";
 import Dice from "./components/Dice.vue";
 import Log from "./components/Log.vue";
 import { useStore } from "@/stores/DiceGame";
-
-console.log(useStore());
-
-const store = useStore();
 </script>
 
 <template>
