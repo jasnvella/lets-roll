@@ -1,57 +1,44 @@
-<script>
-import { useStore } from "@/stores/DiceGame";
-const store = useStore();
-</script>
-
 <template>
   <div class="score">
-    <div id="dice1">{{}}</div>
-    <div id="dice2">{{}}</div>
+    <div class="dice">{{ getDiceValue1 }}</div>
+    <div class="dice">{{ getDiceValue2 }}</div>
   </div>
-  <button class="rollBtn">Roll</button>
+  <button @click="rollDice" class="rollBtn">Roll</button>
 </template>
 
-<style>
-.score {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-}
+<script>
+import { useDiceStore } from "../stores/diceStore";
+import moment from "moment";
 
-#dice1,
-#dice2 {
-  background-color: #0275d8;
-  color: #fff;
-  width: 300px;
-  height: 300px;
-  font-size: 90px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-}
+export default {
+  data() {},
+  methods: {
+    rollDice() {
+      const store = useDiceStore();
 
-.rollBtn,
-.rollBtn:visited {
-  background-color: #5cb85c;
-  width: fit-content;
-  font-size: 20px;
-  color: #fff;
-  padding: 1rem 2.5rem;
-  margin: 0 auto;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  transition: all 0.3s;
-}
+      let i = store.results.length + 1;
+      store.dice1 = Math.floor(Math.random() * 6) + 1;
+      store.dice2 = Math.floor(Math.random() * 6) + 1;
+      store.results.push(
+        `Entry ${i} : ${store.dice1} + ${store.dice2} = ${
+          store.dice1 + store.dice2
+        } (${moment().format("dddd Do MMMM YYYY hh:mm")})`
+      );
+    },
+  },
+  computed: {
+    getDiceValue1() {
+      const store = useDiceStore();
 
-.rollBtn:hover,
-.rollBtn:active {
-  background-color: #50a350;
-}
-</style>
+      return store.dice1 ? store.dice1 : "-";
+    },
+    getDiceValue2() {
+      const store = useDiceStore();
+
+      return store.dice2 ? store.dice2 : "-";
+    },
+  },
+};
+</script>
+
+<style></style>
